@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varun Reji</title>
+    <meta name="description" content="Software Engineer at UWaterloo. Building digital experiences.">
+
+    <!-- Meta tags for social sharing -->
+    <meta property="og:title" content="Varun Reji">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://varunreji.tech">
+    <meta property="og:image" content="https://varunreji.tech/assets/about_personal.jpg">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,62.5..100,400..800;1,62.5..100,400..800&family=Instrument+Serif:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=1002">
+    <link rel="icon" type="image/png" href="site-icon.png?v=fresh">
+    <link rel="apple-touch-icon" href="site-icon.png?v=fresh">
+    <link rel="shortcut icon" href="site-icon.png?v=fresh">
+</head>
+
+<body>
+    <!-- Subtle noise overlay -->
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0">
+        <filter id="cinematic-grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.5" intercept="-0.2" />
+                <feFuncG type="linear" slope="1.5" intercept="-0.2" />
+                <feFuncB type="linear" slope="1.5" intercept="-0.2" />
+            </feComponentTransfer>
+        </filter>
+    </svg>
+
+    <!-- Animated background blobs -->
+    <div class="liquid-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+
+
+    <div class="cursor"></div>
+
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="assets/logo_transparent.png" alt="VR logo">
+        </a>
+        <div class="nav-links">
+            <a href="https://linkedin.com/in/varun-reji" target="_blank">LinkedIn</a>
+            <a href="https://github.com/vkreji" target="_blank">GitHub</a>
+        </div>
+    </nav>
+
+    <!-- Main Title section -->
+    <section class="intro-section">
+        <div class="intro-content fade-up">
+            <h1 class="serif-text">Varun Reji</h1>
+            <p>Software Engineer</p>
+        </div>
+    </section>
+
+    <!-- About me -->
+    <section id="about" class="about-section fade-up">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title">About</h2>
+                <p>
+                    Hi, Im Varun! I'm from Brampton, Ontario, and im currently studying at the University of Waterloo.
+                    I like to learn new things and build interesting ideas. I also enjoy collecting cologne, listening
+                    to music, and travelling.
+
+                </p>
+            </div>
+            <div class="about-visual">
+                <img src="assets/about_personal.jpg" alt="Varun Reji">
+                <div class="about-glass-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education timeline -->
+    <section id="education" class="education-section fade-up">
+        <h2 class="section-title">Education</h2>
+        <div class="education-list">
+            <div class="education-row project-row">
+                <div class="p-num edu-icon-wrap">
+                    <img src="assets/uwaterloo_crest.png" alt="University of Waterloo" class="edu-icon">
+                </div>
+                <div class="p-name-block">
+                    <h3 class="p-name">University of Waterloo</h3>
+                    <p class="p-desc">Bachelor of Applied Science, Computer Science</p>
+                </div>
+                <div class="edu-meta-block">
+                    <span class="p-role">Class of 2030</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skillset -->
+    <section id="skills" class="skills-section fade-up">
+        <h2 class="section-title">Skills & Tools</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="tags">
+                    <span>Python</span> <span>HTML/CSS</span> <span>C</span> <span>JavaScript</span>
+                    <span>TypeScript</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Frameworks</h3>
+                <div class="tags">
+                    <span>React</span> <span>Node.js</span> <span>Express</span> <span>Tailwind CSS</span>
+                    <span>Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="projects-text-section fade-up">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-list">
+
+            <!-- Pathable -->
+            <a href="https://github.com/vkreji/Pathable" target="_blank" class="project-row fade-up">
+                <span class="p-num">01</span>
+                <div class="p-name-block">
+                    <h3 class="p-name">Pathable</h3>
+                    <p class="p-desc">Barrier-aware routing platform.</p>
+                </div>
+                <span class="p-role">React / Python</span>
+            </a>
+
+            <!-- Focus Space -->
+            <a href="https://github.com/vkreji/Focus-Space" target="_blank" class="project-row fade-up">
+                <span class="p-num">02</span>
+                <div class="p-name-block">
+                    <h3 class="p-name">Focus Space</h3>
+                    <p class="p-desc">Zen productivity suite & timer.</p>
+                </div>
+                <span class="p-role">JS / Zen UI</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section id="contact" class="footer-section fade-up">
+        <div class="footer-content">
+            <h2>Let's Create</h2>
+            <a href="mailto:varunkreji@gmail.com" class="big-link">varunkreji@gmail.com</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

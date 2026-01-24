@@ -1,0 +1,512 @@
+:root {
+    --bg-color: #000000;
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-muted: rgba(255, 255, 255, 0.4);
+    --accent: #555;
+
+    --glass-bg: rgba(255, 255, 255, 0.035);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-blur: blur(25px);
+
+    --font-heading: 'Instrument Sans', sans-serif;
+    --font-body: 'Instrument Sans', sans-serif;
+    --font-alt: 'Instrument Serif', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--bg-color);
+    overscroll-behavior: none;
+    /* Stop overscroll bounce */
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Smooth font rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Background setup */
+.liquid-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(60, 60, 80, 0.3) 0%, transparent 70%);
+    filter: blur(80px);
+    border-radius: 50%;
+    animation: move 25s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(40, 40, 60, 0.4) 0%, transparent 70%);
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(50, 30, 50, 0.3) 0%, transparent 70%);
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    top: 40%;
+    left: 30%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(30, 50, 60, 0.2) 0%, transparent 70%);
+    animation-delay: -10s;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(10vw, 10vh) scale(1.2);
+    }
+}
+
+
+
+
+.serif-text {
+    font-family: var(--font-alt) !important;
+    font-style: italic;
+    font-weight: 300 !important;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 38px;
+    width: auto;
+    opacity: 0.95;
+}
+
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+/* Title Section */
+.intro-section {
+    min-height: 100vh;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.intro-content h1 {
+    font-size: clamp(5rem, 15vw, 12rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.intro-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+/* Sections */
+section {
+    padding: 8rem 10%;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    color: white;
+    letter-spacing: -0.02em;
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* Aspect ratio */
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-text p {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.about-visual {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+    /* Limit size */
+    justify-self: end;
+    /* Right align */
+    aspect-ratio: 4/5;
+    /* Portrait aspect ratio */
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    /* Initial state for reveal */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.about-visual.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Color adjustment */
+    filter: saturate(1.1) contrast(1.1) brightness(0.95);
+    transition: filter 0.8s ease;
+}
+
+
+
+/* Film grain overlay */
+.about-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    filter: url(#cinematic-grain);
+    opacity: 0.35;
+    /* Grain opacity */
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Vignette overlay */
+.about-glass-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.4) 100%),
+        /* Vignette */
+        linear-gradient(30deg, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+    /* Outer shadow */
+    pointer-events: none;
+    z-index: 2;
+    backdrop-filter: brightness(1.1) contrast(1.1) blur(0.5px);
+    /* Bloom effect */
+}
+
+/* Skills & Categories */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    backdrop-filter: var(--glass-blur);
+    transition: transform 0.4s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-category h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tags span {
+    padding: 0.7rem 1.4rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    font-size: 0.95rem;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tags span:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Projects */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-row {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1.5fr;
+    gap: 2rem;
+    padding: 2.5rem 3.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    align-items: center;
+    text-decoration: none;
+    backdrop-filter: var(--glass-blur);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    /* Row reveal */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-row:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-row:hover .p-name {
+    transform: translateX(10px);
+    color: white;
+}
+
+.p-num {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    opacity: 0.4;
+    transition: opacity 0.5s ease;
+}
+
+.project-row:hover .p-num {
+    opacity: 0.8;
+}
+
+.p-name-block {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.p-name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.1rem;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.p-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.p-role {
+    justify-self: end;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
+}
+
+.project-row:hover .p-role {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Education */
+.education-section {
+    margin-bottom: 2rem;
+}
+
+.edu-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edu-icon {
+    width: 54px;
+    /* Icon styling */
+    height: 54px;
+    object-fit: contain;
+    filter: brightness(1.1) contrast(1.1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.education-row:hover .edu-icon {
+    filter: brightness(1.2) contrast(1.2) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+    transform: rotate(-12deg) scale(1.1);
+}
+
+.edu-meta-block {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* --- Footer --- */
+.footer-section {
+    padding: 10rem 0 15rem;
+    /* Footer spacing */
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-content h2 {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.big-link {
+    font-family: var(--font-alt);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.big-link:hover {
+    opacity: 0.6;
+}
+
+/* --- Animations --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Animation feel */
+    transition:
+        opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom cursor only */
+.cursor {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 6rem 5%;
+    }
+
+    .project-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .p-role {
+        text-align: left;
+        opacity: 0.6;
+    }
+
+    .intro-content h1 {
+        font-size: 3.5rem;
+    }
+}
