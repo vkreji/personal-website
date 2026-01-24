@@ -1,2 +1,1 @@
-my personal website and portfolio
-work in progress.....
+wip
