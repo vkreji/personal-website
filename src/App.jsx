@@ -164,7 +164,7 @@ export default function App() {
             </p>
             <p>
               When I'm not programming, you'll find me adding to my cologne collection, 
-              listening to music, or playing the newest pokemon game (duh).
+              listening to music, or playing the newest pokemon game!.
             </p>
           </div>
         </motion.section>
