@@ -4,12 +4,18 @@ import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 export default function App() {
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [loading, setLoading] = useState(true);
   
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   const springX = useSpring(cursorX, { stiffness: 100, damping: 20 });
   const springY = useSpring(cursorY, { stiffness: 100, damping: 20 });
   const [facingLeft, setFacingLeft] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     let lastX = 0;
@@ -23,6 +29,35 @@ export default function App() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#111] flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <motion.img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
+            alt="Loading"
+            className="w-20 h-20 mx-auto mb-4"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 0.6 }}
+          />
+          <motion.div
+            className="text-neutral-400 text-sm"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+          >
+            Welcome!
+          </motion.div>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#111] text-neutral-400 selection:bg-orange-500/20 selection:text-orange-200">
@@ -164,7 +199,7 @@ export default function App() {
             </p>
             <p>
               When I'm not programming, you'll find me adding to my cologne collection, 
-              listening to music, or playing the newest pokemon game!.
+              listening to music, or playing the newest pokemon game!
             </p>
           </div>
         </motion.section>
