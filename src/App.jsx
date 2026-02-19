@@ -52,7 +52,6 @@ export default function App() {
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
-            Welcome!
           </motion.div>
         </motion.div>
       </div>
