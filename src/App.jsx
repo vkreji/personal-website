@@ -166,7 +166,7 @@ export default function App() {
               <Github className="w-[18px] h-[18px]" />
             </a>
             <a
-              href="https://linkedin.com/in/varunreji"
+              href="https://linkedin.com/in/varun-reji/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-500 hover:text-neutral-100 transition-colors"
