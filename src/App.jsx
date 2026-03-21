@@ -1,6 +1,7 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import aboutPersonalImg from "../assets/about_personal.jpg";
 
 export default function App() {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -136,7 +137,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              src="/assets/about_personal.jpg"
+              src={aboutPersonalImg}
               alt="Varun Reji"
               className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
