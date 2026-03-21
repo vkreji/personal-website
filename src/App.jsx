@@ -224,7 +224,7 @@ export default function App() {
               {
                 title: "Pathable",
                 description: "Accessible routing app",
-                tech: "React, Python",
+                tech: "React Native, Python, Firebase",
                 link: "https://github.com/vkreji/Pathable"
               },
               {
@@ -250,8 +250,8 @@ export default function App() {
                       {project.title}
                     </span>
                     <ArrowUpRight className={`w-3.5 h-3.5 transition-all ${hoveredProject === i
-                        ? 'text-neutral-100 translate-x-0.5 -translate-y-0.5'
-                        : 'text-neutral-600'
+                      ? 'text-neutral-100 translate-x-0.5 -translate-y-0.5'
+                      : 'text-neutral-600'
                       }`} />
                   </div>
                   <p className="text-sm text-neutral-500 mt-0.5">
