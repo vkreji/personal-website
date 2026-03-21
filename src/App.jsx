@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 export default function App() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   const springX = useSpring(cursorX, { stiffness: 100, damping: 20 });
@@ -82,7 +82,7 @@ export default function App() {
           animate={{ y: [0, -15, 0], x: [0, 5, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
         />
-        
+
         <motion.img
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/143.gif"
           alt=""
@@ -117,7 +117,7 @@ export default function App() {
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-24 md:py-32">
-        
+
         <motion.header
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -131,17 +131,17 @@ export default function App() {
               </h1>
               <p className="mt-1 text-sm">CS @ UWaterloo '30</p>
             </div>
-            
+
             <motion.img
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/697e1384e97891b15b99c838/52f841bc3_IMG_1217.jpg"
+              src="/assets/about_personal.jpg"
               alt="Varun Reji"
               className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
           </div>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -193,11 +193,11 @@ export default function App() {
           </h2>
           <div className="space-y-4 text-[15px] leading-relaxed">
             <p>
-              Hey! I'm from Brampton, Ontario. Currently studying Computer Science 
+              Hey! I'm from Brampton, Ontario. Currently studying Computer Science
               at the University of Waterloo.
             </p>
             <p>
-              When I'm not programming, you'll find me adding to my cologne collection, 
+              When I'm not programming, you'll find me adding to my cologne collection,
               listening to music, or playing the newest pokemon game!
             </p>
           </div>
@@ -212,9 +212,15 @@ export default function App() {
           <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
             Projects
           </h2>
-          
+
           <div className="space-y-1">
             {[
+              {
+                title: "ScholarMatch",
+                description: "AI powered scholarship matching platform",
+                tech: "React, Python, FastAPI, Supabase",
+                link: "https://github.com/vkreji/ScholarMatch"
+              },
               {
                 title: "Pathable",
                 description: "Accessible routing app",
@@ -239,16 +245,14 @@ export default function App() {
               >
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <span className={`text-[15px] transition-colors ${
-                      hoveredProject === i ? 'text-neutral-100' : 'text-neutral-300'
-                    }`}>
+                    <span className={`text-[15px] transition-colors ${hoveredProject === i ? 'text-neutral-100' : 'text-neutral-300'
+                      }`}>
                       {project.title}
                     </span>
-                    <ArrowUpRight className={`w-3.5 h-3.5 transition-all ${
-                      hoveredProject === i 
-                        ? 'text-neutral-100 translate-x-0.5 -translate-y-0.5' 
+                    <ArrowUpRight className={`w-3.5 h-3.5 transition-all ${hoveredProject === i
+                        ? 'text-neutral-100 translate-x-0.5 -translate-y-0.5'
                         : 'text-neutral-600'
-                    }`} />
+                      }`} />
                   </div>
                   <p className="text-sm text-neutral-500 mt-0.5">
                     {project.description}
@@ -297,7 +301,7 @@ export default function App() {
           </h2>
           <p className="text-[15px] leading-relaxed">
             Want to chat? Reach out at{" "}
-            <a 
+            <a
               href="mailto:varunkreji@gmail.com"
               className="text-neutral-100 hover:text-orange-300 transition-colors"
             >
