@@ -211,6 +211,71 @@ export default function App() {
           className="mb-20"
         >
           <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
+            Experience
+          </h2>
+
+          <div className="space-y-8">
+            <div className="group">
+              <div className="flex items-baseline justify-between mb-2">
+                <h3 className="text-[15px] font-medium text-neutral-100">
+                  SAS TECHNO INC.
+                </h3>
+                <span className="text-xs text-neutral-500">
+                  Jun 2025 — Sep 2025
+                </span>
+              </div>
+              <p className="text-sm text-neutral-400 mb-3">Web Developer Intern</p>
+              <ul className="text-[14px] text-neutral-500 leading-relaxed space-y-2">
+                <li className="flex gap-3 items-start">
+                  <span className="text-neutral-700 mt-0.5">→</span>
+                  <span>Rebuilt client landing pages by refactoring JavaScript and CSS and removing unused assets, reducing page load times by 30% and improving user retention.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="text-neutral-700 mt-0.5">→</span>
+                  <span>Implemented form validation, layout fixes, and responsive design changes across 5+ client websites, directly reducing client-reported UI issues.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="text-neutral-700 mt-0.5">→</span>
+                  <span>Worked with clients to translate business requirements into deployed features, debugging production issues and ensuring on-time, stable releases.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="group">
+              <div className="flex items-baseline justify-between mb-2">
+                <h3 className="text-[15px] font-medium text-neutral-100">
+                  Mathemagic
+                </h3>
+                <span className="text-xs text-neutral-500">
+                  Jun 2024 — Sep 2024
+                </span>
+              </div>
+              <p className="text-sm text-neutral-400 mb-3">Mathematics Tutor</p>
+              <ul className="text-[14px] text-neutral-500 leading-relaxed space-y-2">
+                <li className="flex gap-3 items-start">
+                  <span className="text-neutral-700 mt-0.5">→</span>
+                  <span>Tutored 30+ students in Advanced Functions and Calculus, increasing average test scores by 20%.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="text-neutral-700 mt-0.5">→</span>
+                  <span>Co-created instructional videos explaining calculus concepts, reaching 200+ learners.</span>
+                </li>
+                <li className="flex gap-3 items-start">
+                  <span className="text-neutral-700 mt-0.5">→</span>
+                  <span>Led weekly AP Calculus workshops for 50+ students across in-person and virtual sessions.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </motion.section>
+
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="mb-20"
+        >
+          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
             Projects
           </h2>
 
@@ -270,7 +335,7 @@ export default function App() {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.8 }}
           className="mb-20"
         >
           <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
@@ -295,7 +360,7 @@ export default function App() {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.9 }}
         >
           <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
             Contact
@@ -314,7 +379,7 @@ export default function App() {
         <motion.footer
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
+          transition={{ delay: 1.0 }}
           className="mt-24 pt-8 border-t border-neutral-800/30"
         >
           <p className="text-xs text-neutral-600">
