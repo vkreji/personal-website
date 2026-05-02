@@ -65,57 +65,12 @@ export default function App() {
         className="fixed pointer-events-none z-50 hidden md:block"
         style={{ x: springX, y: springY }}
       >
-        <motion.img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
-          alt="Pikachu"
-          className="w-10 h-10 object-contain"
-          style={{ scaleX: facingLeft ? -1 : 1 }}
-          animate={{ y: [0, -3, 0] }}
-          transition={{ repeat: Infinity, duration: 0.5 }}
-        />
+        <div className={`w-8 h-8 rounded-full border-1 border-neutral-600 ${facingLeft ? 'rotate-180' : ''} transition-transform duration-300`}>
+          <div className="w-2 h-2 bg-neutral-600 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        </div>
       </motion.div>
+        
 
-      <div className="fixed inset-0 pointer-events-none overflow-hidden hidden md:block">
-        <motion.img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/92.gif"
-          alt=""
-          className="absolute top-[15%] right-[10%] w-12 h-12 opacity-30"
-          animate={{ y: [0, -15, 0], x: [0, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        />
-
-        <motion.img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/143.gif"
-          alt=""
-          className="absolute bottom-8 left-[5%] w-14 h-14 opacity-20"
-          animate={{ scale: [1, 1.02, 1] }}
-          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-        />
-
-        <motion.img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/129.gif"
-          alt=""
-          className="absolute bottom-[20%] right-[8%] w-10 h-10 opacity-25"
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeOut" }}
-        />
-
-        <motion.img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/132.gif"
-          alt=""
-          className="absolute top-[40%] left-[3%] w-8 h-8 opacity-20"
-          animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-        />
-
-        <motion.img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif"
-          alt=""
-          className="absolute top-[60%] right-[3%] w-12 h-12 opacity-15"
-          animate={{ x: [0, -5, 0], opacity: [0.15, 0.25, 0.15] }}
-          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-        />
-      </div>
 
       <div className="max-w-2xl mx-auto px-6 py-24 md:py-32">
 
