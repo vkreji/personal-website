@@ -299,7 +299,7 @@ export default function App() {
           <div className="space-y-3 text-[15px]">
             <div className="flex items-baseline gap-3">
               <span className="text-neutral-600">→</span>
-              <span>Looking for Summer 2026 internships</span>
+              <span>Incoming at Canada Life</span>
             </div>
             <div className="flex items-baseline gap-3">
               <span className="text-neutral-600">→</span>
