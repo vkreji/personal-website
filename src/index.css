@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--bg: #111;
+	--text: #e0e0e0;
+	--title: #f0f0f0;
+	--muted: #999;
+	--soft: #516c93;
+	--accent: #6e93c7;
+	--accent-hover: #94aac8;
+	--body-font: 'Lora', serif;
+	--name-font: 'Cormorant Garamond', serif;
+}
 
 html,
 body,
@@ -9,5 +23,88 @@ body,
 	width: 100%;
 	max-width: 100%;
 	overflow-x: hidden;
-	background: #111;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--body-font);
+	color: var(--title);
+}
+
+a {
+	color: var(--accent);
+}
+
+a:hover {
+	color: var(--accent-hover);
+}
+
+.app-shell {
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body-font);
+}
+
+.app-name {
+	font-family: var(--name-font);
+	color: var(--title);
+	font-size: clamp(2.0rem, 5vw, 4.0rem);
+	line-height: 1;
+	font-style: italic;
+	letter-spacing: -0.02em;
+}
+
+.app-section-title {
+	font-size: 0.75rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	color: var(--muted);
+	margin-bottom: 1.25rem;
+}
+
+.app-body {
+	font-size: 15px;
+	line-height: 1.75;
+	color: var(--text);
+}
+
+.app-muted {
+	color: var(--muted);
+}
+
+.app-accent {
+	color: var(--accent);
+}
+
+.app-accent:hover {
+	color: var(--accent-hover);
+}
+
+.app-soft {
+	color: var(--soft);
+}
+
+.app-title {
+	color: var(--title);
+}
+
+.app-project-title {
+	color: var(--accent);
+	transition: color 0.2s ease;
+}
+
+.app-project-title-hover {
+	color: var(--accent-hover);
+}
+
+.app-project-arrow {
+	color: var(--soft);
+}
+
+.app-project-arrow-hover {
+	color: var(--accent-hover);
 }

@@ -25,9 +25,8 @@ export default function App() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-
   return (
-    <div className="min-h-screen bg-[#111] text-neutral-400 selection:bg-orange-500/20 selection:text-orange-200">
+    <div className="app-shell">
       <motion.div
         className="fixed pointer-events-none z-50 hidden md:block"
         style={{ x: springX, y: springY }}
@@ -38,53 +37,32 @@ export default function App() {
       </motion.div>
         
 
-
-      <div className="max-w-2xl mx-auto px-6 py-24 md:py-32">
+      <div className="max-w-2xl mx-auto px-6 py-20 md:py-28">
 
         <motion.header
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-16"
         >
-          <div className="flex items-start justify-between gap-8">
-            <div>
-              <h1 className="text-neutral-100 text-2xl font-medium tracking-tight">
-                Varun Reji
-              </h1>
-              <p className="mt-1 text-sm">CS @ UWaterloo '30</p>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 sm:gap-8">
+            <div className="max-w-sm">
+              <h1 className="app-name font-semibold leading-none tracking-tight">Varun Reji</h1>
             </div>
-
-            <motion.img
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              src={aboutPersonalImg}
-              alt="Varun Reji"
-              className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-            />
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mt-8 text-neutral-300 leading-relaxed max-w-md"
-          >
-            I like building things that work well and look good.
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-6 flex items-center gap-4"
+            className="mt-5 flex items-center gap-4"
           >
             <a
               href="https://github.com/vkreji"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-500 hover:text-neutral-100 transition-colors"
+              className="app-accent transition-colors"
             >
               <Github className="w-[18px] h-[18px]" />
             </a>
@@ -92,13 +70,13 @@ export default function App() {
               href="https://linkedin.com/in/varun-reji/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-500 hover:text-neutral-100 transition-colors"
+              className="app-accent transition-colors"
             >
               <Linkedin className="w-[18px] h-[18px]" />
             </a>
             <a
               href="mailto:varunkreji@gmail.com"
-              className="text-neutral-500 hover:text-neutral-100 transition-colors"
+              className="app-accent transition-colors"
             >
               <Mail className="w-[18px] h-[18px]" />
             </a>
@@ -109,19 +87,20 @@ export default function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mb-20"
+          className="mb-16"
         >
-          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
+          <h2 className="app-section-title">
             About
           </h2>
-          <div className="space-y-4 text-[15px] leading-relaxed">
+          <div className="space-y-5 app-body">
             <p>
-              Hey! I'm from Brampton, Ontario. Currently studying Computer Science
-              at the University of Waterloo.
+              I'm a <span className="app-accent font-medium">Computer Science</span> student at the University of Waterloo with a passion for building impactful software. I'm particularly interested in backend development, systems design, and AI.
             </p>
             <p>
-              When I'm not programming, you'll find me adding to my cologne collection,
-              listening to music, or playing the newest pokemon game!
+              As of now, I'm using my time to explore and learn as much as I can. Not too sure exactly where I'll end up, but I believe that keeping my mind open and enjoying what I do will naturally lead me to the right opportunities.
+            </p>
+            <p>
+              In my free time, I enjoy listening to music, hiking, and exploring new restaurants and cafes.
             </p>
           </div>
         </motion.section>
@@ -130,78 +109,64 @@ export default function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mb-20"
+          className="mb-16"
         >
-          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
+          <h2 className="app-section-title">
             Experience
           </h2>
 
-          <div className="space-y-8">
+          <div className="space-y-10">
             <div className="group">
-              <div className="flex items-baseline justify-between mb-2">
-                <h3 className="text-[15px] font-medium text-neutral-100">
-                  SAS TECHNO INC.
+              <div className="flex items-baseline justify-between mb-1.5">
+                <h3 className="text-[15px] font-medium app-accent">
+                  Canada Life Assurance Company
                 </h3>
-                <span className="text-xs text-neutral-500">
-                  Jun 2025 — Sep 2025
+                <span className="text-xs app-muted">
+                  May 2026 — Aug 2024
                 </span>
               </div>
-              <p className="text-sm text-neutral-400 mb-3">Web Developer Intern</p>
-              <ul className="text-[14px] text-neutral-500 leading-relaxed space-y-2">
+              <p className="text-sm app-muted mb-2.5">Software Developer Intern</p>
+              <ul className="text-[14px] app-muted leading-relaxed space-y-2">
                 <li className="flex gap-3 items-start">
-                  <span className="text-neutral-700 mt-0.5">→</span>
-                  <span>Rebuilt client landing pages by refactoring JavaScript and CSS and removing unused assets, reducing page load times by 30% and improving user retention.</span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-neutral-700 mt-0.5">→</span>
-                  <span>Implemented form validation, layout fixes, and responsive design changes across 5+ client websites, directly reducing client-reported UI issues.</span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-neutral-700 mt-0.5">→</span>
-                  <span>Worked with clients to translate business requirements into deployed features, debugging production issues and ensuring on-time, stable releases.</span>
+                  <span className="app-soft mt-0.5">→</span>
+                  <span>Starting Spring 2026.</span>
                 </li>
               </ul>
             </div>
-
+          
+    
             <div className="group">
-              <div className="flex items-baseline justify-between mb-2">
-                <h3 className="text-[15px] font-medium text-neutral-100">
-                  Mathemagic
+              <div className="flex items-baseline justify-between mb-1.5">
+                <h3 className="text-[15px] font-medium app-accent">
+                  SAS TECHNO INC.
                 </h3>
-                <span className="text-xs text-neutral-500">
-                  Jun 2024 — Sep 2024
+                <span className="text-xs app-muted">
+                  Jun 2025 — Sep 2025
                 </span>
               </div>
-              <p className="text-sm text-neutral-400 mb-3">Mathematics Tutor</p>
-              <ul className="text-[14px] text-neutral-500 leading-relaxed space-y-2">
+              <p className="text-sm app-muted mb-2.5">Web Developer Intern</p>
+              <ul className="text-[14px] app-muted leading-relaxed space-y-2">
                 <li className="flex gap-3 items-start">
-                  <span className="text-neutral-700 mt-0.5">→</span>
-                  <span>Tutored 30+ students in Advanced Functions and Calculus, increasing average test scores by 20%.</span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-neutral-700 mt-0.5">→</span>
-                  <span>Co-created instructional videos explaining calculus concepts, reaching 200+ learners.</span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-neutral-700 mt-0.5">→</span>
-                  <span>Led weekly AP Calculus workshops for 50+ students across in-person and virtual sessions.</span>
+                  <span className="app-soft mt-0.5">→</span>
+                  <span>Designed and developed websites for local community organizations</span>
                 </li>
               </ul>
             </div>
           </div>
+          
         </motion.section>
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="mb-20"
+          className="mb-16"
         >
-          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
+          <h2 className="app-section-title">
             Projects
           </h2>
 
-          <div className="space-y-1">
+          <div className="space-y-2">
             {[
               {
                 title: "ScholarMatch",
@@ -229,20 +194,20 @@ export default function App() {
                 rel="noopener noreferrer"
                 onMouseEnter={() => setHoveredProject(i)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="group flex items-center justify-between py-4 border-b border-neutral-800/50 hover:border-neutral-700 transition-colors"
+                className="group flex items-center justify-between py-5 border-b border-neutral-800/50 hover:border-neutral-700 transition-colors"
               >
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <span className={`text-[15px] transition-colors ${hoveredProject === i ? 'text-neutral-100' : 'text-neutral-300'
+                    <span className={`text-[15px] transition-colors ${hoveredProject === i ? 'app-project-title-hover' : 'app-project-title'
                       }`}>
                       {project.title}
                     </span>
                     <ArrowUpRight className={`w-3.5 h-3.5 transition-all ${hoveredProject === i
-                      ? 'text-neutral-100 translate-x-0.5 -translate-y-0.5'
-                      : 'text-neutral-600'
+                      ? 'app-project-arrow-hover translate-x-0.5 -translate-y-0.5'
+                      : 'app-project-arrow'
                       }`} />
                   </div>
-                  <p className="text-sm text-neutral-500 mt-0.5">
+                  <p className="text-sm app-muted mt-1">
                     {project.description}
                   </p>
                 </div>
@@ -254,46 +219,23 @@ export default function App() {
           </div>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mb-20"
-        >
-          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
-            Now
-          </h2>
-          <div className="space-y-3 text-[15px]">
-            <div className="flex items-baseline gap-3">
-              <span className="text-neutral-600">→</span>
-              <span>Incoming at Canada Life</span>
-            </div>
-            <div className="flex items-baseline gap-3">
-              <span className="text-neutral-600">→</span>
-              <span>Building side projects</span>
-            </div>
-            <div className="flex items-baseline gap-3">
-              <span className="text-neutral-600">→</span>
-              <span>Doing side quests</span>
-            </div>
-          </div>
-        </motion.section>
+
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
         >
-          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-6">
+          <h2 className="app-section-title">
             Contact
           </h2>
-          <p className="text-[15px] leading-relaxed">
-            Want to chat? Reach out at{" "}
+          <p className="app-body">
+            Reach out at{" "}
             <a
               href="mailto:varunkreji@gmail.com"
-              className="text-neutral-100 hover:text-orange-300 transition-colors"
+              className="app-accent transition-colors"
             >
-              varunkreji@gmail.com
+              varunkreji [at] gmail [dot] com
             </a>
           </p>
         </motion.section>
@@ -302,7 +244,7 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.0 }}
-          className="mt-24 pt-8 border-t border-neutral-800/30"
+          className="mt-16 pt-6 border-t border-neutral-800/30"
         >
           <p className="text-xs text-neutral-600">
             © {new Date().getFullYear()} Varun Reji
