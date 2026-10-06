@@ -73,7 +73,7 @@ export default function App() {
               <ul className="text-[14px] app-muted leading-relaxed space-y-2">
                 <li className="flex gap-3 items-start">
                   <span className="app-soft mt-0.5">→</span>
-                  <span>Starting Spring 2026.</span>
+                  <span>Automation work using SQl and general debugging</span>
                 </li>
               </ul>
             </div>
